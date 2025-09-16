@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./TodoApp.css";
 function LoginPage() {
@@ -12,10 +12,10 @@ function LoginPage() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (username.toLocaleLowerCase() === "jack" && password === "dummy") {
+    if (username.toLowerCase() === "jack" && password === "dummy") {
       setShowSuccessMessage(true);
-      navigate("/welcome");
       setShowErrorMessage(false);
+      navigate(`/welcome/${username}`);
     } else {
       setShowSuccessMessage(false);
       setShowErrorMessage(true);
@@ -23,6 +23,7 @@ function LoginPage() {
   }
   return (
     <div>
+      <h1>Login here to Start!</h1>
       {showSuccessMessage && (
         <div className="successMessage">Authenticated Successfully!</div>
       )}

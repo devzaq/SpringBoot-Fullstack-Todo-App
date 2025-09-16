@@ -1,5 +1,15 @@
+import { Link, useParams } from "react-router-dom";
+
 function WelcomePage() {
-  return <div>Welcome to the page</div>;
+  const { username } = useParams();
+  return (
+    <div>
+      <h1>Welcome {username}!</h1>
+      <Link type="button" to="/todos">
+        Todos
+      </Link>
+    </div>
+  );
 }
 
 export default WelcomePage;
