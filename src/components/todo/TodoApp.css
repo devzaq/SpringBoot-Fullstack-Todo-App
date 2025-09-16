@@ -1,0 +1,10 @@
+body {
+  padding: 30px;
+}
+
+label,
+input,
+button {
+  margin: 10px;
+  padding: 5px;
+}
